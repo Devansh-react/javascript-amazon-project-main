@@ -1,31 +1,40 @@
-const product=[{
-    Image:'images/products/athletic-cotton-socks-6-pairs.jpg',
-    name : 'Black and Gray Athletic Cotton Socks - 6 Pairs',
-    ratings :{
-        stars : 4.5 ,
-        count : 87 
-    },
-    prize : 1090
-},
-{
-    Image :'images/products/intermediate-composite-basketball.jpg',
-    name:'Intermediate Size Basketball',
-    ratings :{
-        stars:4.0,
-        count : 127
-    },
-    prize: 2095
+// const product=[{
+//     Image:'images/products/athletic-cotton-socks-6-pairs.jpg',
+//     name : 'Black and Gray Athletic Cotton Socks - 6 Pairs',
+//     ratings :{
+//         stars : 4.5 ,
+//         count : 87 
+//     },
+//     prize : 1090
+// },
+// {
+//     Image :'images/products/intermediate-composite-basketball.jpg',
+//     name:'Intermediate Size Basketball',
+//     ratings :{
+//         stars:4.0,
+//         count : 127
+//     },
+//     prize: 2095
 
-},{
-    Image:'images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg',name :'Adults Plain Cotton T-Shirt - 2 Pack',
-     ratings :{
-        stars : 4.0,
-        count:120 
-     },
-     prize : 799
+// },{
+//     Image:'images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg',name :'Adults Plain Cotton T-Shirt - 2 Pack',
+//      ratings :{
+//         stars : 4.0,
+//         count:120 
+//      },
+//      prize : 799
 
 
-}];
+// },
+// {
+//   Image:'images/products/black-2-slot-toaster.jpg ',
+//   name:'2 Slot Toaster - Black',
+//   ratings :{
+//     stars:5,
+//     count:2197,
+//   },
+//   prize:1899,
+// }];
 let sumhtml='';
  product.forEach((product)=>{
 
@@ -34,7 +43,7 @@ let sumhtml='';
      `<div class="product-container">
     <div class="product-image-container">
       <img class="product-image"
-        src="${product.Image}">
+        src="${product.image}">
     </div>
 
     <div class="product-name limit-text-to-2-lines">
@@ -43,9 +52,9 @@ let sumhtml='';
 
     <div class="product-rating-container">
       <img class="product-rating-stars"
-        src="images/ratings/rating-${product.ratings.stars*10}.png">
+        src="images/ratings/rating-${product.rating.stars*10}.png">
       <div class="product-rating-count link-primary">
-        ${product.ratings.count}
+        ${product.rating.count}
       </div>
     </div>
 
