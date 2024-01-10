@@ -1,4 +1,4 @@
-import {cart, addtocart} from '../data/cart.js';
+import {cart } from '../data/cart.js';
 import {product} from '../data/products.js';
  
 
@@ -51,18 +51,18 @@ let sumhtml='';
       Added
     </div>
 
-    <button class="add-to-cart-button button-primary js-add-to-cart" data-item-name="${product.name}">
+    <button class="add-to-cart-button button-primary js-add-to-cart" data-item-Id="${product.id}">
       Add to Cart
     </button>
   </div>`
   
-  console.log(sumhtml)
+  // console.log(sumhtml)
   document.querySelector('.producthtmljs').innerHTML=sumhtml;
 
-  function addtocart(productname){
+  function addtocart(itemID){
     let present_article;
      cart.forEach((article) =>{
-      if(productname===article.product){
+      if(itemID===article.productID){
         present_article=article;
       }
 
@@ -72,34 +72,34 @@ let sumhtml='';
      } else{
 
        cart.push({
-        product:productname,
+        productID: itemID,
         quantity:1
        });
      }
-    console.log(cart)
+     let cartquantity=1;
+     cart.forEach((items) =>{
+      cartquantity += items.quantity;
+     })
+    console.log(cartquantity);
+    console.log(cart);
   };
-  function itemnumber(){
-    let cartQuantity=0;
-    cart.forEach((item) =>{
-     cartQuantity += item.quantity
-    })
-    document.querySelector('.js_cart').innerHTML=cartQuantity ;
-    
-  }
+
+  
 
 
 
   document.querySelectorAll('.js-add-to-cart').
   forEach((button) =>{
     button.addEventListener('click',()=>{
-     const productname= button.dataset.itemName;
+    console.log(button.dataset.itemID);
 
-     addtocart(productname);
-     itemnumber();
+    //  addtocart(itemID);
     
-   
-     })
+
      
+     
+    })
+    
      
   });
 
