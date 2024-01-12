@@ -1,4 +1,4 @@
-import {cart } from '../data/cart.js';
+import {cart, savelocalstorage} from '../data/cart.js';
 import {product} from '../data/products.js';
  
 
@@ -82,6 +82,7 @@ let sumhtml='';
      })
     console.log(cartquantity);
     console.log(cart);
+    savelocalstorage();
   };
 
   
@@ -91,9 +92,9 @@ let sumhtml='';
   document.querySelectorAll('.js-add-to-cart').
   forEach((button) =>{
     button.addEventListener('click',()=>{
-    console.log(button.dataset.itemID);
+    const itemID=(button.dataset.itemId);
 
-    //  addtocart(itemID);
+     addtocart(itemID);
     
 
      
