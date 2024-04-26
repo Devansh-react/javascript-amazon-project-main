@@ -1,5 +1,6 @@
 import {cart, savelocalstorage} from '../data/cart.js';
-import {product} from '../data/products.js';
+import {product ,} from '../data/products.js';
+import { addtocart } from '../data/cart.js';
  
 
 let sumhtml='';
@@ -59,31 +60,7 @@ let sumhtml='';
   // console.log(sumhtml)
   document.querySelector('.producthtmljs').innerHTML=sumhtml;
 
-  function addtocart(itemID){
-    let present_article;
-     cart.forEach((article) =>{
-      if(itemID===article.productID){
-        present_article=article;
-      }
-
-     });
-     if(present_article){
-      present_article.quantity +=1 ;
-     } else{
-
-       cart.push({
-        productID: itemID,
-        quantity:1
-       });
-     }
-     let cartquantity=1;
-     cart.forEach((items) =>{
-      cartquantity += items.quantity;
-     })
-    console.log(cartquantity);
-    console.log(cart);
-    savelocalstorage();
-  };
+ 
 
   
 
